@@ -1,0 +1,30 @@
+2018-10-18 16:40:15 - PHP Warning:  unlink(E:/xampp/htdocs/oc3020/system/storage/cache/cache.catalog.language.1539884415): Resource temporarily unavailable in E:\xampp\htdocs\oc3020\system\library\cache\file.php on line 68
+2018-10-19 8:45:17 - PHP Warning:  unlink(E:/xampp/htdocs/oc3020/system/storage/cache/cache.catalog.language.1539942317): Resource temporarily unavailable in E:\xampp\htdocs\oc3020\system\library\cache\file.php on line 68
+2018-10-19 13:34:23 - PHP Warning:  unlink(E:/xampp/htdocs/oc3020/system/storage/cache/cache.catalog.language.1539959663): Resource temporarily unavailable in E:\xampp\htdocs\oc3020\system\library\cache\file.php on line 68
+2018-10-22 7:19:33 - PHP Notice:  Undefined variable: data in E:\xampp\htdocs\oc3020\system\storage\modification\catalog\controller\product\category.php on line 5
+2018-10-29 17:24:35 - PHP Notice:  Undefined index: effect in E:\xampp\htdocs\oc3020\system\storage\modification\admin\controller\extension\module\slideshow.php on line 123
+2018-10-29 17:30:06 - PHP Notice:  Undefined index: effect in E:\xampp\htdocs\oc3020\system\storage\modification\admin\controller\extension\module\slideshow.php on line 123
+2018-10-29 17:30:17 - PHP Warning:  rmdir(E:/xampp/htdocs/oc3020/system/storage/modification/admin/controller/extension): Directory not empty in E:\xampp\htdocs\oc3020\system\storage\modification\admin\controller\marketplace\modification.php on line 163
+2018-10-29 17:30:17 - PHP Warning:  rmdir(E:/xampp/htdocs/oc3020/system/storage/modification/admin/controller): Directory not empty in E:\xampp\htdocs\oc3020\system\storage\modification\admin\controller\marketplace\modification.php on line 163
+2018-10-29 17:30:17 - PHP Warning:  rmdir(E:/xampp/htdocs/oc3020/system/storage/modification/admin): Directory not empty in E:\xampp\htdocs\oc3020\system\storage\modification\admin\controller\marketplace\modification.php on line 163
+2018-10-29 17:31:05 - PHP Warning:  unlink(E:/xampp/htdocs/oc3020/system/storage/cache/cache.catalog.language.1540837865): Resource temporarily unavailable in E:\xampp\htdocs\oc3020\system\library\cache\file.php on line 68
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 148
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 149
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 165
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 166
+2019-01-05 12:43:51 - PHP Warning:  imagecreatetruecolor() expects parameter 1 to be integer, string given in E:\xampp\htdocs\octw3020\system\library\image.php on line 169
+2019-01-05 12:43:51 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 177
+2019-01-05 12:43:51 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 180
+2019-01-05 12:43:51 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 182
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 148
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 149
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 165
+2019-01-05 12:43:51 - PHP Warning:  A non-numeric value encountered in E:\xampp\htdocs\octw3020\system\library\image.php on line 166
+2019-01-05 12:43:51 - PHP Warning:  imagecreatetruecolor() expects parameter 1 to be integer, string given in E:\xampp\htdocs\octw3020\system\library\image.php on line 169
+2019-01-05 12:43:51 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 177
+2019-01-05 12:43:51 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 180
+2019-01-05 12:43:51 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, null given in E:\xampp\htdocs\octw3020\system\library\image.php on line 182
+2019-01-05 12:47:26 - PHP Warning:  unlink(E:/xampp/htdocs/octw3020/system/storage/cache/cache.catalog.language.1546696046): Resource temporarily unavailable in E:\xampp\htdocs\octw3020\system\library\cache\file.php on line 68
+2019-01-05 13:02:14 - PHP Warning:  unlink(E:/xampp/htdocs/octw3020/system/storage/cache/cache.catalog.language.1546696934): Resource temporarily unavailable in E:\xampp\htdocs\octw3020\system\library\cache\file.php on line 68
+2019-01-05 13:12:49 - PHP Warning:  unlink(E:/xampp/htdocs/octw3020/system/storage/cache/cache.catalog.language.1546697569): Resource temporarily unavailable in E:\xampp\htdocs\octw3020\system\library\cache\file.php on line 68
+2019-01-05 14:51:18 - PHP Warning:  unlink(E:/xampp/htdocs/octw3020/system/storage/cache/cache.catalog.language.1546703478): Resource temporarily unavailable in E:\xampp\htdocs\octw3020\system\library\cache\file.php on line 68

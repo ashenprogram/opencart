@@ -1,0 +1,3902 @@
+2019-01-05 11:55:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 5:42:08 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
+LINE: 391
+CODE: <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
+LINE: 388
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 387
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+LINE: 452
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 5:51:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 5:57:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 5:58:19 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 6:17:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-22 6:25:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 248
+CODE: $data['products'][] = array(
+LINE: 438
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/view/theme/simplica/template/common/header.twig
+CODE: <div class="col-sm-5">{{ search }}</div>
+LINE: 75
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 200
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 147
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 56
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 228
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-28 9:29:03 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/view/theme/simplica/template/common/header.twig
+CODE: <div class="col-sm-5">{{ search }}</div>
+LINE: 75
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+LINE: 438
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+LINE: 460
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-02-28 9:37:18 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Product Option Color and Size Combination Pro
+
+FILE: catalog/controller/common/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+LINE: 80
+
+FILE: catalog/controller/checkout/cart.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 347
+
+FILE: catalog/controller/account/order.php
+CODE: 'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+LINE: 263
+
+FILE: system/library/cart/cart.php
+CODE: $option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio'
+LINE: 53
+CODE: if ($option_value_query->num_rows) {
+LINE: 61
+LINE: 111
+CODE: SELECT pov.option_value_id,
+LINE: 54
+LINE: 104
+CODE: public function getProducts()
+LINE: 57
+CODE: 'price'                   => $option_value_query->row['price'],
+LINE: 122
+LINE: 175
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 210
+CODE: if (isset($this->request->post['recurring_id']))
+LINE: 318
+CODE: $option_data[] = array(
+LINE: 217
+LINE: 351
+
+FILE: catalog/controller/api/order.php
+CODE: $option_data[] = array(
+LINE: 197
+LINE: 570
+
+FILE: catalog/model/checkout/order.php
+CODE: `value` = '" . $this->db->escape($option['value']) . "', `type` = '" . $this->db->escape($option['type']) . "'
+LINE: 15
+LINE: 63
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity - " . (int)$order_product['quantity'] . ")
+LINE: 343
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product_option_value SET quantity = (quantity + " . (int)$order_product['quantity'] . ")
+LINE: 384
+
+FILE: catalog/model/catalog/product.php
+CODE: "SELECT * FROM " . DB_PREFIX . "product_option_value pov
+LINE: 344
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 357
+CODE: public function getProductOptions($product_id)
+LINE: 384
+CODE: public function getProductOptions($product_id) {
+LINE: 387
+
+FILE: catalog/controller/product/product.php
+CODE: $data['options'] = array();
+LINE: 322
+CODE: 'name'                    => $option_value['name'],
+LINE: 342
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ footer }}
+LINE: 642
+CODE: {% if option.type == 'select' %}
+LINE: 276
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 127
+
+FILE: catalog/view/theme/simplica/template/product/product.twig
+CODE: {{ footer }}
+LINE: 684
+CODE: {% if option.type == 'select' %}
+LINE: 199
+CODE: <li>{{ text_model }} {{ model }}</li>
+LINE: 46
+
+FILE: catalog/controller/extension/optioncolorsize/optioncolorsize.php
+CODE: AND quantity > 0
+LINE: 76
+CODE: 'option_value_id' => $size_option_value['option_value_id']
+LINE: 86
+
+FILE: catalog/view/theme/default/template/extension/optioncolor/optionsize.twig
+CODE: <div class="radio">
+LINE: 20
+CODE: <div class="radio">
+LINE: 20
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'select' or product_option.type == 'radio' or product_option.type == 'checkbox' or product_option.type == 'image' %}
+LINE: 763
+CODE: <td class="text-left">{{ entry_additional_image }}</td>
+LINE: 1178
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1207
+CODE: if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+LINE: 1643
+CODE: function addOptionValue(option_row) {
+LINE: 1821
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1926
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/option');
+LINE: 940
+LINE: 1246
+CODE: $data['product_options'] = array();
+LINE: 961
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 981
+CODE: foreach ($product_option['product_option_value'] as $product_option_value) {
+LINE: 974
+LINE: 1315
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 1008
+CODE: $data['product_images'][] = array(
+LINE: 1109
+CODE: $data['product_images'][] = array(
+LINE: 1110
+CODE: $this->load->model('localisation/language');
+LINE: 590
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/model/catalog/product.php
+CODE: public function addProduct($data)
+LINE: 78
+CODE: $product_option['type'] == 'checkbox' || $product_option['type'] == 'image'
+LINE: 114
+LINE: 253
+CODE: public function getTotalProducts($data = array()) {
+LINE: 710
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'
+LINE: 121
+LINE: 260
+CODE: weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "',image = '" . (isset($product_option_value['image']) ? $this->db->escape($product_option_value['image']) : '') . "'
+LINE: 128
+LINE: 274
+CODE: SELECT * FROM " . DB_PREFIX . "product_option_value
+LINE: 590
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 603
+CODE: if (isset($data['product_image'])) {
+LINE: 158
+LINE: 315
+CODE: image = '" . $this->db->escape($product_image['image']) . "', sort_order = '" . (int)$product_image['sort_order'] . "'");
+LINE: 171
+LINE: 339
+CODE: public function deleteProduct($product_id) {
+LINE: 447
+CODE: public function getProductOptions($product_id) {
+LINE: 645
+
+FILE: admin/controller/catalog/option.php
+CODE: || $option['type'] == 'checkbox'
+LINE: 442
+LINE: 470
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 363
+
+FILE: admin/language/en-gb/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/language/zh-TW/catalog/option.php
+CODE: // Text
+LINE: 8
+
+FILE: admin/model/catalog/option.php
+CODE: public function addOption($data) {
+LINE: 24
+CODE: image = '" . $this->db->escape(html_entity_decode($option_value['image'], ENT_QUOTES, 'UTF-8')) . "',
+LINE: 35
+LINE: 63
+LINE: 65
+CODE: 'sort_order'      => $option_value['sort_order']
+LINE: 162
+CODE: 'sort_order'               => $option_value['sort_order']
+LINE: 188
+CODE: public function getTotalOptions() {
+LINE: 196
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <optgroup label="{{ text_choose }}">
+LINE: 50
+CODE: <td class="text-center">{{ entry_image }}</td>
+LINE: 192
+CODE: <td class="text-right"><input type="text" name="option_value[{{ option_value_row }}][sort_order]"
+LINE: 216
+CODE: <td colspan="3"></td>
+LINE: 225
+CODE: this.value == 'checkbox' || this.value == 'image'
+LINE: 237
+CODE: html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]"
+LINE: 261
+CODE: $('#option-value tbody').append(html);
+LINE: 268
+CODE: {{ footer }}
+LINE: 284
+----------------------------------------------------------------
+MOD: Remove Add to Cart
+CODE: <label class="control-label" for="input-quantity">{{ entry_qty }}</label>
+LINE: 311
+CODE: ##MARKER##
+LINE: 309
+
+FILE: catalog/view/theme/simplica/template/common/header.twig
+CODE: <div class="col-sm-5">{{ search }}</div>
+LINE: 75
+
+FILE: catalog/view/theme/simplica/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+LINE: 460
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/product/compare.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/product/manufacturer_list.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 20
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 20
+----------------------------------------------------------------
+MOD: System modification
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 793
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 479
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 826
+CODE: 'p.price',
+LINE: 515
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 527
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+CODE: $_['column_name']
+LINE: 19
+CODE: $_['entry_category']
+LINE: 73
+CODE: $data['product_categories'] = array();
+LINE: 953
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1359
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: autoplayDisableOnInteraction: true,
+LINE: 23
+
+FILE: catalog/controller/extension/module/slideshow.php
+CODE: $data['module'] = $module++;
+LINE: 33
+
+FILE: admin/view/template/extension/module/slideshow.twig
+CODE: <div class="form-group">
+LINE: 68
+
+FILE: admin/controller/extension/module/slideshow.php
+CODE: if (isset($this->request->post['status'])) {
+LINE: 126
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/extension/dashboard/recent_info.twig
+CODE: <td>{{ order.status }}</td>
+LINE: 22
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: <td class="text-left">{{ order.order_status }}</td>
+LINE: 130
+
+FILE: admin/view/template/sale/order_history.twig
+CODE: <td class="text-left">{{ history.status }}</td>
+LINE: 16
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+LINE: 400
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
+2019-03-25 17:03:02 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: System modification
+
+FILE: admin/controller/catalog/product.php
+CODE: $url = '';
+LINE: 30
+LINE: 86
+LINE: 144
+LINE: 202
+LINE: 295
+LINE: 419
+LINE: 462
+LINE: 555
+CODE: protected function getList() {
+LINE: 248
+CODE: $filter_data = array(
+LINE: 350
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 367
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'name'       => $result['name'],
+LINE: 395
+CODE: $data['filter_name'] = $filter_name;
+LINE: 520
+CODE: $data['sort_name'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&sort=pd.name' . $url, true);
+LINE: 464
+
+FILE: admin/model/catalog/product.php
+CODE: $sql = "SELECT COUNT(DISTINCT p.product_id) AS total FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+LINE: 638
+CODE: $sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+LINE: 358
+CODE: $sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+LINE: 671
+CODE: 'p.price',
+LINE: 394
+CODE: $sql .= " GROUP BY p.product_id";
+LINE: 406
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: var filter_quantity = $('input[name=\'filter_quantity\']').val();
+LINE: 226
+CODE: <div class="form-group">
+LINE: 50
+
+FILE: admin/language/zh-TW/catalog/product.php
+CODE: $_['column_name']
+LINE: 16
+CODE: $_['entry_category']
+LINE: 70
+CODE: $data['product_categories'] = array();
+LINE: 946
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {{ entry_category }}</span></label>
+LINE: 385
+CODE: $('input[name=\'manufacturer\']').autocomplete({
+LINE: 1169
+
+FILE: admin/controller/common/footer.php
+CODE: $data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+LINE: 9
+
+FILE: admin/model/design/seo_url.php
+CODE: $implode[] = "query LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 87
+CODE: $implode[] = "keyword LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 91
+CODE: $implode[] = "`query` LIKE '" . $this->db->escape($data['filter_query']) . "'";
+LINE: 26
+CODE: $implode[] = "`keyword` LIKE '" . $this->db->escape($data['filter_keyword']) . "'";
+LINE: 30
+
+FILE: admin/controller/catalog/category.php
+CODE: 'limit'       => 5
+LINE: 595
+
+FILE: admin/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 70
+
+FILE: catalog/model/localisation/zone.php
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone WHERE country_id = '" . (int)$country_id . "' AND status = '1' ORDER BY name");
+LINE: 12
+
+FILE: catalog/controller/account/account.php
+CODE: $data['wishlist'] = $this->url->link('account/wishlist');
+LINE: 60
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: {{ footer }}
+LINE: 132
+CODE: {% if error_warning %}
+LINE: 60
+
+FILE: admin/model/catalog/category.php
+CODE: if (!empty($data['filter_name'])) {
+LINE: 223
+CODE: public function getCategories($data = array()) {
+LINE: 225
+CODE: $pagination = new Pagination();
+LINE: 266
+CODE: protected function getList() {
+LINE: 170
+CODE: 'limit' => $this->config->get('config_limit_admin')
+LINE: 229
+CODE: $data['categories'][] = array(
+LINE: 240
+CODE: $data['button_rebuild'] = $this->language->get('button_rebuild');
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+CODE: 'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+NOT FOUND - OPERATION SKIPPED!
+CODE: // Text
+LINE: 8
+----------------------------------------------------------------
