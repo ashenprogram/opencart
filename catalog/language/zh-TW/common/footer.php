@@ -14,7 +14,7 @@ $_['text_account']      = '會員中心';
 $_['text_order']        = '歷史訂單';
 $_['text_wishlist']     = '收藏清單';
 $_['text_newsletter']   = '訂閱電子報';
-$_['text_powered']      = '%s &copy; %s - Powered By <a href="http://www.opencart.com">OpenCart</a> & <a href="https://www.ntcart.com">NTCart</a>';
+$_['text_powered']      = '%s &copy; %s - Powered By <a href="http://www.opencart.com">OpenCart</a> & <a href="https://www.osec.tw">OSEC.tw</a>';
 
 $_['text_contact']      = '聯絡我們';
 $_['text_address']      = '商店地址';
